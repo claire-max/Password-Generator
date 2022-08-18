@@ -1,30 +1,44 @@
-
 // Assignment code 
+
 var generateBtn = document.querySelector("#generate");
 
-function randomInt(min,max) {
-  return Math.floor(Math.random()*(max-min) + min)
+function randomInt(min, max) {
+  if (!max) {
+    max = min 
+    min = 0
+}
+
+var rand = Math.random()
+return Math.floor(min*(1 - rand) + rand*max)
 }
 
 function getRandomItem(list) {
-  return list[randomInt(0, list.length - 1)]
+  return list[randomInt(list.length)]
 }
 
 function generatePassword() {
-
-  var userInput = window.prompt("How long do you want your password to be?")
-  var passwordLength = parseInt(userInput)
   
-  if (isNaN(passwordLength)) {
-    window.alert("That is not a number")
-    return
-  } 
+  while (true) {
+    var userInput = window.prompt("How long would you like your password to be?")
   
-  if (passwordLength < 8 || passwordLength > 128) {
-    window.alert("Password should be between 8 and 128 characters!")
+  
+    // User leaving  prompt
+  if (userInput === null) {
     return
   }
-  
+    var passwordLength = parseInt(userInput)
+
+    if (isNaN(passwordLength)) {
+      window.alert("Value not accepted")
+    } else if (passwordLength <8 || passwordLength > 128) {
+      window.alert("Password must be between 8 and 128 characters")
+    } else {
+      break
+    }
+
+  }
+
+
    var userWantsNumbers = window.confirm("Do you want to include numbers in your password?")
    var userWantsLowercase = window.confirm("Do you want to include lowercase letters in your password?")
    var userWantsUppercase = window.confirm("Do you want to include UPPERCASE letters in your password?")
@@ -87,13 +101,4 @@ function writePassword() {
   }
   
 }
-
-
-
-
-
-
-
-
-
 
