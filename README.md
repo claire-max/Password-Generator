@@ -1,4 +1,4 @@
-# Password Generator Starter Code
+# Password Generator 
 
 ## User Story
 AS AN employee with access to sensitive data
@@ -22,5 +22,13 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 
+## Technologies Used
+
+Javascript
+
 ## Mock-Up
 ![alt text](./Mock-Up.jpg)
+
+## Link to deployed application:
+
+https://claire-max.github.io/Password-Generator/
