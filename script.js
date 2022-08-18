@@ -38,7 +38,6 @@ function generatePassword() {
 
   }
 
-
    var userWantsNumbers = window.confirm("Do you want to include numbers in your password?")
    var userWantsLowercase = window.confirm("Do you want to include lowercase letters in your password?")
    var userWantsUppercase = window.confirm("Do you want to include UPPERCASE letters in your password?")
@@ -76,9 +75,10 @@ function generatePassword() {
    for (var i = 0; i < passwordLength; i++) {
     var randomList = getRandomItem(optionsCart)
     var randomChar = getRandomItem(randomList)
-    console.log(randomChar)
+    generatePassword += randomChar
    }
 
+   return generatePassword
 
 }
 
